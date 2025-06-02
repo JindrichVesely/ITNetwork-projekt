@@ -1,4 +1,12 @@
 class Evidence:
+    """
+    Sprava a ukladani seznamu pojistenych
+
+    pridej_pojisteneho(pojisteny): Pridani pojisteneho do seznamu
+    vypis_vsechny(): Vypise vsechny pojistene v seznamu
+    Vyhledej_pojisteneho(hledani): Vyhledá pojištěného podle jména nebo tel. cisla
+    """
+
     def __init__(self):
         self.pojisteni = []
 
@@ -17,7 +25,7 @@ class Evidence:
 
         for p in self.pojisteni:
             cele_jmeno = f"{p.jmeno} {p.prijmeni}".lower()
-            if hledani in cele_jmeno:
+            if hledani in cele_jmeno or hledani in p.telefon:
                 print(p)
                 nalezeno = True
 
