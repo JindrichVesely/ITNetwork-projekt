@@ -11,11 +11,15 @@ class Evidence:
         for p in self.pojisteni:
             print(p)
 
-    def vyhledej_pojisteneho(self, jmeno, prijmeni):
+    def vyhledej_pojisteneho(self, hledani):
+        hledani = hledani.lower()
         nalezeno = False
+
         for p in self.pojisteni:
-            if p.jmeno.lower() == jmeno.lower() and p.prijmeni.lower() == prijmeni.lower():
+            cele_jmeno = f"{p.jmeno} {p.prijmeni}".lower()
+            if hledani in cele_jmeno:
                 print(p)
-                nalezeno = True1
+                nalezeno = True
+
         if not nalezeno:
             print("Pojištěnec nebyl nalezen.")

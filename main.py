@@ -1,5 +1,6 @@
 from pojisteny import Pojisteny
 from evidence import Evidence
+from test_data import napln_testovaci_data #TESTOVACÍ DATA, ODEBRAT a smazat test_data.py
 
 def kontrola_vstupu(prompt):
     while True:
@@ -20,7 +21,8 @@ def main():
         print("2 - Vypsat všechny pojištěné")
         print("3 - Vyhledat pojištěnce")
         print("4 - Konec")
-
+        print("============================")
+        print("\033[91m8 - Načíst testovací data")  #TESTOVACÍ DATA, ODEBRAT a smazat test_data.py
 
         volba = input()
         if volba == "1":
@@ -34,16 +36,22 @@ def main():
 
         elif volba == "2":
             evidence.vypis_vsechny()
-            input("\nPokračujte libovolnou klávesou...")
+            input("Pokračujte libovolnou klávesou...")
+
 
         elif volba == "3":
-            jmeno = kontrola_vstupu("Zadejte jméno pojištěného: ")
-            prijmeni = kontrola_vstupu("Zadejte příjmení: ")
-            evidence.vyhledej_pojisteneho(jmeno, prijmeni)
+            hledani = kontrola_vstupu("Zadejte jméno, příjmení nebo oboje: ")
+            evidence.vyhledej_pojisteneho(hledani)
             input("Pokračujte libovolnou klávesou...")
+
 
         elif volba == "4":
             break
+
+        # TESTOVACÍ DATA, ODEBRAT a smazat test_data.py
+        elif volba == "8":
+            napln_testovaci_data(evidence)
+            input("Testovací data byla načtena. Pokračujte libovolnou klávesou...")
 
         else:
             print("Neplatná volba, zkuste to znovu.")
