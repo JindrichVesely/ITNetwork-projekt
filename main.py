@@ -14,21 +14,22 @@ def main():
     evidence = Evidence()
     #Hlavni menu
     while True:
-        print("============================")
-        print("Evidence pojištěných")
-        print("============================")
-        print("Vyberte si akci:")
-        print("1 - Přidat nového pojištěnce")
-        print("2 - Vypsat všechny pojištěné")
-        print("3 - Vyhledat pojištěnce")
-        print("4 - Konec")
-        print("============================")
-        print("\033[91m8 - Načíst testovací data\033[0m")  #TESTOVACÍ DATA, ODEBRAT a smazat test_data.py
+        print("╔════════════════════════════════╗")
+        print("║    Evidence pojištěných        ║")
+        print("╠════════════════════════════════╣")
+        print("║ Vyberte si akci:               ║")
+        print("║ 1 - Přidat nového pojištěnce   ║")
+        print("║ 2 - Vypsat všechny pojištěné   ║")
+        print("║ 3 - Vyhledat pojištěnce        ║")
+        print("║ 4 - Konec                      ║")
+        print("╠════════════════════════════════╣")
+        print("║\033[91m 8 - Načíst testovací data \033[0m     ║")  #TESTOVACÍ DATA, ODEBRAT a smazat test_data.py
+        print("╚════════════════════════════════╝ \n")
 
         #formular pro pridani pojistence
         volba = input()
         if volba == "1":
-            jmeno = kontrola_vstupu("\nZadejte jméno pojištěného: ")
+            jmeno = kontrola_vstupu("Zadejte jméno pojištěného: ")
             prijmeni = kontrola_vstupu("Zadejte příjmení pojištěného: ")
             vek = kontrola_vstupu("Zadejte věk pojištěného: ")
             telefon = kontrola_vstupu("Zadejte telefonní číslo pojištěného: ")

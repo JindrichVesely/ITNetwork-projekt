@@ -8,5 +8,5 @@ class Pojisteny:
 
     #Návrat žádosti o pojištěnce
     def __str__(self):
-        return f"Jméno: {self.jmeno:<} {self.prijmeni:} Věk: {self.vek:} Tel.:{self.telefon}"
+        return f"Jméno: {self.jmeno:} {self.prijmeni:} Věk: {self.vek:} Tel.:{self.telefon}"
 
