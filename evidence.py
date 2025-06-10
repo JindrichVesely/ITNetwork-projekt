@@ -16,8 +16,14 @@ class Evidence:
     def vypis_vsechny(self):
         if not self.pojisteni:
             print("Žádný pojištěnec zatím není evidován.")
+            return
+
+        print(f"|{'Jméno':^15} | {'Prijmení':^15} | {'Věk':^5} | {'Telefon':^15}|")
+        print("-------------------------------------------------------------≠")
+
+
         for p in self.pojisteni:
-            print(p)
+            print(f"|{p.jmeno:^15} | {p.prijmeni:^15} | {p.vek:^5} | {p.telefon:^15}|")
 
     def vyhledej_pojisteneho(self, hledani):
         hledani = hledani.lower()
