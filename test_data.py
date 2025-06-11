@@ -1,5 +1,5 @@
 from pojisteny import Pojisteny
-
+#Testovaci data urcena pro DEV a Debug
 def napln_testovaci_data(evidence):
     evidence.pridej_pojisteneho(Pojisteny("Jan", "Novák", "35", "777123456"))
     evidence.pridej_pojisteneho(Pojisteny("Petra", "Svobodová", "29", "777654321"))

@@ -2,7 +2,7 @@ import re
 from pojisteny import Pojisteny
 from evidence import Evidence
 from test_data import napln_testovaci_data #TESTOVACÍ DATA, ODEBRAT a smazat test_data.py
-
+#Funkce cekajici na vstup
 def pokracuj():
     input("\nPokračujte libovolnou klávesou...")
 
@@ -21,8 +21,7 @@ def kontrola_vek(prompt):
             return int(vek_str)
         print("Zadejte prosím platný věk:")
 
-#Kontrola ze cislo obsahuje pouze cisla a znamenko +, ktere muze byt pouze na zacatku
-#a kontrola delky
+#Kontrola ze cislo obsahuje pouze cisla a znamenko +, ktere muze byt pouze na zacatku a kontrola delky
 def kontrola_telefon(prompt):
     while True:
         telefon = input(prompt).strip()
@@ -30,10 +29,9 @@ def kontrola_telefon(prompt):
         if re.fullmatch(pattern, telefon):
             return telefon
         print("Telefon musí obsahovat pouze čísla a znaménko +.")
-
+#Hlavni menu
 def main():
     evidence = Evidence()
-    #Hlavni menu
     while True:
         print("╔════════════════════════════════╗")
         print("║    Evidence pojištěných        ║")
@@ -59,7 +57,6 @@ def main():
                 evidence.pridej_pojisteneho(Pojisteny(jmeno, prijmeni, vek, telefon))
                 print("Karta pojištěnce byla vytvořena.")
                 pokracuj()
-                input()
 
             #formular pro vypsani vsech pojistenych
             case "2":
@@ -76,11 +73,12 @@ def main():
             case "4":
                 break
 
-            # TESTOVACÍ DATA, ODEBRAT a smazat test_data.py
+            # TESTOVACÍ DATA - Slouzi pouze pro vyvoj a testovani
             case "8":
                 napln_testovaci_data(evidence)
                 pokracuj()
 
+            #Neplatna volba
             case _:
                 print("Neplatná volba, zkuste to znovu.")
 
